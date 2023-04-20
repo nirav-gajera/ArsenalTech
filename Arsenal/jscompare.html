@@ -1,0 +1,16 @@
+<html>
+<body>
+    <h1>JavaScript Comparison</h1>
+    <input id ="age" value ="18">
+    <button onclick="myFunction()">Check</button>
+
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            let age = document.getElementById("age").value;
+            let votable = (age < 18)? "Too young to vote" : "Old enough";
+            document.getElementById("demo").innerHTML= votable + " to vote.";
+            }
+    </script>
+</body>
+</html>

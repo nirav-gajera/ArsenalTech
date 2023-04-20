@@ -1,0 +1,1266 @@
+      	__    __ 
+	   /  \  / / 
+	  / /\ \/ /
+	 /_/  \__/
+
+Task Report | 09 Mar, 2023
+ 
+1. PHP Revision.
+2. Types of Join in Database.
+3. Select, Insert, update and delete query.
+4. MySQL Data Types Database Terminology.
+5. PHP Practical Test.
+
+Task Report | 10 Mar, 2023
+
+1. DBMS and RDBMS.
+2. PHP and MySQL. 
+3. SQL JOINS- INNER,LEFT,RIGHT,FULL,SELF JOIN, UNION.
+4. SQL Aggregate Functions.
+5. Where, group by, order by, limit, like.
+6. SQL Injection.
+
+Movie ticket booking system: https://adnan-tech.com/movie-ticket-booking-website-php-and-mysql
+			https://github.com/M-dev-acc/movie-ticket-booking-portal-in-PHP
+			https://www.campcodes.com/projects/php/online-movie-theater-seat-reservation-system-in-php-mysql/
+			https://github.com/vieduogn/moviezone
+			
+			https://github.com/gosaliajainam/online-movie-booking
+PHP Basic: https://github.com/learning-zone/php-basics#readme
+
+
+Arithmatic operator
+Operator	Description
++	Addition
+-	Subtraction
+*	Multiplication
+**	Exponentiation (ES2016)
+/	Division
+%	Modulus (Division Remainder)
+++	Increment
+--	Decrement
+
+Assignment operator
+Operator	Example	Same As
+=	x = y	x = y
++=	x += y	x = x + y
+-=	x -= y	x = x - y
+*=	x *= y	x = x * y
+/=	x /= y	x = x / y
+%=	x %= y	x = x % y
+**=	x **= y	x = x ** y
+
+Comparison operator
+Operator	Description
+==	equal to
+===	equal value and equal type
+!=	not equal
+!==	not equal value or not equal type
+>	greater than
+<	less than
+>=	greater than or equal to
+<=	less than or equal to
+?	ternary operator
+
+Logical Operators
+Operator	Description
+&&	logical and
+||	logical or
+!	logical not
+
+Bitwise Operators
+Bit operators work on 32 bits numbers.
+Operator  Description	Example	  Same as  	   Result  	Decimal
+&	         AND	   5 & 1	 0101 & 0001	0001	 1
+|	         OR    	   5 | 1	0101 | 0001		0101	 5
+~	         NOT	   ~ 5	    ~0101			1010	 10
+^	         XOR	  5 ^ 1	    0101 ^ 0001		0100	 4
+<<	     left shift	  5 << 1	0101 << 1		1010	 10
+>>	    right shift	   5 >> 1	0101 >> 1		0010	 2
+>>> unsigned right shift 5 >>> 1 0101 >>> 1		0010	 2
+
+
+Bitwise Operators
+Operator	Name	      					Description
+&			AND	                	Sets each bit to 1 if both bits are 1
+|			OR	                	Sets each bit to 1 if one of two bits is 1
+^			XOR	             	 	Sets each bit to 1 if only one of two bits is 1
+~			NOT            			Inverts all the bits
+<<		Zero fill left shift		Shifts left by pushing zeros in from the right and let the leftmost bits fall off
+>>		Signed right shift			Shifts right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+>>>		Zero fill right shift		Shifts right by pushing zeros in from the left, and let the rightmost bits fall off
+
+ ___     _  
+|   \   | |   
+| |\ \  | |
+| | \ \ | |
+| |  \ \| |
+|_|   \___|
+
+
+
+Task Report | 13 Mar, 2023
+
+1. Introduction of JavaScript.
+2. JavaScript Statements ,Syntax.
+3. JavaScript Keywords ,Variables.
+4. JavaScript Operators.
+5. JavaScript Data Types.
+6. JavaScript Functions.
+7. JavaScript Objects.
+8. HTML Events.
+9. JavaScript Strings.
+10. JavaScript Arrays
+11. JavaScript Dates.
+
+Don't Use new Object()
+Use "" instead of new String()
+Use 0 instead of new Number()
+Use false instead of new Boolean()
+Use {} instead of new Object()
+Use [] instead of new Array()
+Use /()/ instead of new RegExp()
+Use function (){} instead of new Function()
+
+Example: 
+let x1 = "";             // new primitive string
+let x2 = 0;              // new primitive number
+let x3 = false;          // new primitive boolean
+const x4 = {};           // new object
+const x5 = [];           // new array object
+const x6 = /()/;         // new regexp object
+const x7 = function(){}; // new function object
+
+
+Task Report | 14 Mar, 2023
+
+1. JS Math.
+2. JS Booleans.
+3. JS If...else
+4. JS loop for, for in, for of, loop while, Break, Continue.
+5. JS iterables
+6. JS Sets, Maps.
+7. JS Typeof, Type Conversion.
+8. JS RegExp.
+9. JS Errors.
+10. JS Scope(Block,Function,Global).
+11. JS Hoisting.
+12. JS Arrow Function.
+13. JS Classes.
+14. JS Modules.
+15. JS JSON.
+16. JS Class Inheritance, Class Static method.
+
+
+
+A Function to Set,Get & Check a Cookie.
+
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  let user = getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+    user = prompt("Please enter your name:", "");
+    if (user != "" && user != null) {
+      setCookie("username", user, 365);
+    }
+  }
+}
+
+
+jQuery Event Methods:
+	
+Mouse 		Keyboard 		Form 	Document/Window Events
+click		keypress		submit		load
+dblclick	keydown			change		resize
+mouseenter	keyup			focus		scroll
+mouseleave	  -				blur		unload
+
+
+Task Report | 15 Mar, 2023
+
+1. JS Callback.
+2. JS HTML DOM Intro, DOM Methods, Elements.
+3. JS DOM Document, Forms, Events.
+4. JS Browser Object Model(BOM).
+5. JS Cookies.
+6. jQuery Introduction.
+7. jQuery Selectors, Events.
+8. jQuery Effects.
+9. jQuery HTML.
+10. jQuery Callback.
+12. jQuery Chaining.
+13. JavaScript RegularExpression.
+14. JavaScript Form Validation.
+15. jQuery Ajax Intro.
+16. jQuery GET, POST.
+
+Access Modifiers:
+
+public: If we identify class members as public, they may be accessed from anywhere even outside the classroom.
+private: When class members are defined as private, they can only be accessible across the class.
+protected: This is like private class members marked as protected can still be accessible from their subclass with one exception
+
+PHP - Interfaces vs. Abstract Classes
+Interface are similar to abstract classes. The difference between interfaces and abstract classes are:
+
+-Interfaces cannot have properties, while abstract classes can
+-All interface methods must be public, while abstract class methods is public or protected
+-All methods in an interface are abstract, so they cannot be implemented in code and the abstract keyword is not necessary
+-Classes can implement an interface while inheriting from another class at the same time
+
+  Magic Methods
+
+Example #1 Sleep and wakeup
+
+<?php
+class Connection
+{
+    protected $link;
+    private $dsn, $username, $password;
+    
+    public function __construct($dsn, $username, $password)
+    {
+        $this->dsn = $dsn;
+        $this->username = $username;
+        $this->password = $password;
+        $this->connect();
+    }
+    
+    private function connect()
+    {
+        $this->link = new PDO($this->dsn, $this->username, $this->password);
+    }
+    
+    public function __sleep()
+    {
+        return array('dsn', 'username', 'password');
+    }
+    
+    public function __wakeup()
+    {
+        $this->connect();
+    }
+}?>
+__serialize() and __unserialize() ¶
+public __serialize(): array
+public __unserialize(array $data): void
+serialize() checks if the class has a function with the magic name __serialize(). If so, that function is executed prior to any serialization. It must construct and return an associative array of key/value pairs that represent the serialized form of the object. If no array is returned a TypeError will be thrown.
+
+
+Example #2 Serialize and unserialize
+
+<?php
+class Connection
+{
+    protected $link;
+    private $dsn, $username, $password;
+
+    public function __construct($dsn, $username, $password)
+    {
+        $this->dsn = $dsn;
+        $this->username = $username;
+        $this->password = $password;
+        $this->connect();
+    }
+
+    private function connect()
+    {
+        $this->link = new PDO($this->dsn, $this->username, $this->password);
+    }
+
+    public function __serialize(): array
+    {
+        return [
+          'dsn' => $this->dsn,
+          'user' => $this->username,
+          'pass' => $this->password,
+        ];
+    }
+
+    public function __unserialize(array $data): void
+    {
+        $this->dsn = $data['dsn'];
+        $this->username = $data['user'];
+        $this->password = $data['pass'];
+
+        $this->connect();
+    }
+}?>
+__toString() ¶
+public __toString(): string
+The __toString() method allows a class to decide how it will react when it is treated like a string. For example, what echo $obj; will print.
+
+Example #3 Simple example
+
+<?php
+// Declare a simple class
+class TestClass
+{
+    public $foo;
+
+    public function __construct($foo)
+    {
+        $this->foo = $foo;
+    }
+
+    public function __toString()
+    {
+        return $this->foo;
+    }
+}
+
+$class = new TestClass('Hello');
+echo $class;
+?>
+The above example will output:
+
+Hello
+__invoke() ¶
+__invoke( ...$values): mixed
+The __invoke() method is called when a script tries to call an object as a function.
+
+Example #4 Using __invoke()
+
+<?php
+class CallableClass
+{
+    public function __invoke($x)
+    {
+        var_dump($x);
+    }
+}
+$obj = new CallableClass;
+$obj(5);
+var_dump(is_callable($obj));
+?>
+The above example will output:
+
+int(5)
+bool(true)
+Example #5 Using __invoke()
+
+<?php
+class Sort
+{
+    private $key;
+
+    public function __construct(string $key)
+    {
+        $this->key = $key;
+    }
+
+    public function __invoke(array $a, array $b): int
+    {
+        return $a[$this->key] <=> $b[$this->key];
+    }
+}
+
+$customers = [
+    ['id' => 1, 'first_name' => 'John', 'last_name' => 'Do'],
+    ['id' => 3, 'first_name' => 'Alice', 'last_name' => 'Gustav'],
+    ['id' => 2, 'first_name' => 'Bob', 'last_name' => 'Filipe']
+];
+
+// sort customers by first name
+usort($customers, new Sort('first_name'));
+print_r($customers);
+
+// sort customers by last name
+usort($customers, new Sort('last_name'));
+print_r($customers);
+?>
+The above example will output:
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [first_name] => Alice
+            [last_name] => Gustav
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [first_name] => Bob
+            [last_name] => Filipe
+        )
+
+    [2] => Array
+        (
+            [id] => 1
+            [first_name] => John
+            [last_name] => Do
+        )
+
+)
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [first_name] => John
+            [last_name] => Do
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [first_name] => Bob
+            [last_name] => Filipe
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [first_name] => Alice
+            [last_name] => Gustav
+        )
+
+)
+__set_state() ¶
+static __set_state(array $properties): object
+This static method is called for classes exported by var_export().
+
+The only parameter of this method is an array containing exported properties in the form ['property' => value, ...].
+
+Example #6 Using __set_state()
+
+<?php
+
+class A
+{
+    public $var1;
+    public $var2;
+
+    public static function __set_state($an_array)
+    {
+        $obj = new A;
+        $obj->var1 = $an_array['var1'];
+        $obj->var2 = $an_array['var2'];
+        return $obj;
+    }
+}
+
+$a = new A;
+$a->var1 = 5;
+$a->var2 = 'foo';
+
+$b = var_export($a, true);
+var_dump($b);
+eval('$c = ' . $b . ';');
+var_dump($c);
+?>
+The above example will output:
+
+string(60) "A::__set_state(array(
+   'var1' => 5,
+   'var2' => 'foo',
+))"
+object(A)#2 (2) {
+  ["var1"]=>
+  int(5)
+  ["var2"]=>
+  string(3) "foo"
+}
+
+Example #7 Using __debugInfo()
+
+<?php
+class C {
+    private $prop;
+
+    public function __construct($val) {
+        $this->prop = $val;
+    }
+
+    public function __debugInfo() {
+        return [
+            'propSquared' => $this->prop ** 2,
+        ];
+    }
+}
+
+var_dump(new C(42));
+?>
+
+
+Object Oriented Concepts:
+Before we go in detail, lets define important terms related to Object Oriented Programming.
+
+Class − This is a programmer-defined data type, which includes local functions as well as local data. 
+		You can think of a class as a template for making many instances of the same kind (or class) of object.
+
+Object − An individual instance of the data structure defined by a class.
+		You define a class once and then make many objects that belong to it. Objects are also known as instance.
+
+Member Variable − These are the variables defined inside a class.
+				  This data will be invisible to the outside of the class and can be accessed via member functions.
+				  These variables are called attribute of the object once an object is created.
+
+Member function − These are the function defined inside a class and are used to access object data.
+
+Inheritance − When a class is defined by inheriting existing function of a parent class then it is called inheritance.
+			  Here child class will inherit all or few member functions and variables of a parent class.
+
+Parent class − A class that is inherited from by another class. This is also called a base class or super class.
+
+Child Class − A class that inherits from another class. This is also called a subclass or derived class.
+
+Polymorphism − This is an object oriented concept where same function can be used for different purposes.
+			   For example function name will remain same but it take different number of arguments and can do different task.
+
+Overloading − a type of polymorphism in which some or all of operators have different implementations depending on the types of their arguments.
+			  Similarly functions can also be overloaded with different implementation.
+
+Data Abstraction − Any representation of data in which the implementation details are hidden (abstracted).
+
+Encapsulation − refers to a concept where we encapsulate all the data and member functions together to form an object.
+
+Constructor − refers to a special type of function which will be called automatically whenever there is an object formation from a class.
+
+Destructor − refers to a special type of function which will be called automatically whenever an object is deleted or goes out of scope.
+
+
+Iterables:
+
+current() - Returns the element that the pointer is currently pointing to. It can be any data type
+key() Returns the key associated with the current element in the list. It can only be an integer, float, boolean or string
+next() Moves the pointer to the next element in the list
+rewind() Moves the pointer to the first element in the list
+valid() If the internal pointer is not pointing to any element (for example, if next() was called at the end of the list),
+		this should return false. It returns true in any other case
+
+
+Task Report | 16 Mar, 2023
+
+1. PHP Oops Into.
+2. PHP Classes/Objects.
+3. PHP Constructor.
+4. PHP Destructor.
+5. PHP Access Modifiers.
+6. PHP Inheritance.
+7. PHP Method Overriding &overloading.
+8. PHP final Keyword.
+9. PHP Constants/Scope Resolution opr::. 
+10. PHP Abstract Class.
+11. PHP Interface.
+12. PHP Traits.
+13. PHP Magic Method.
+14. PHP Method chaining.
+  
+Procedural vs. Oop difference.  
+  
+In procedural programming, 
+you create functions (procedures) which act on data structures. 
+ With OOP, you’re creating objects which encapsulate both data and the methods which act on it.
+OOP provides a clear structure for the programs. OOP helps to keep the PHP code DRY “Don’t Repeat Yourself”,
+and makes the code easier to maintain, modify and debug.
+OOP makes it possible to create full reusable applications with less code and shorter development time.
+
+What is AJAX?
+AJAX = Asynchronous JavaScript and XML.
+
+AJAX is a technique for creating fast and dynamic web pages.
+
+AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. 
+	This means that it is possible to update parts of a web page, without reloading the whole page.
+
+Classic web pages, (which do not use AJAX) must reload the entire page if the content should change.
+
+Examples of applications using AJAX: Google Maps, Gmail, Youtube, and Facebook tabs.
+
+
+
+Task Report | 17 Mar, 2023
+
+1. PHP Namespace.
+2. PHP Iterables.
+3. PHP Static Method.
+4. PHP Static Properties.
+5. Learn About oop Implementation in php.
+6. Procedural Vs. Oop Difference Understanding.
+7. Ajax PHP.
+8. Ajax Database.
+
+APIchatgpt: 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
+
+
+-What are Design Patterns in PHP?
+In software engineering, a Design Pattern is a general repeatable solution to commonly occurring problem in software Design.
+Good Object-oriented designs should be reusable,maintainable and extensible and Design Patterns in PHP could be very helpful in doing that.
+It does not only help in solving problems, it implies an optimal way addressing common challenges.
+
+-Why use PHP Design Patterns?
+Some of the most significant benefits of implementing design patterns in PHP are:
+
+PHP Design patterns help solve repetitive problems faced during development
+Using design patterns in PHP makes communication between designers and developers more efficient 
+You can be confident that other developers will understand your code since it follows design patterns
+Following best practices helps build more robust applications
+It helps make development faster and easier.
+
+Design Pattern: https://designpatternsphp.readthedocs.io/en/latest/Creational/README.html
+
+-MVC concept in detail:
+
+Model:
+The Model object knows all about all the data that need to be displayed.
+The Model represents the application data and business rules that govern to an update of data.
+Model is not aware about the presentation of data and How the data will be display to the browser.
+View:
+The View represents the presentation of the application.
+View object refers to the model remains same if there are any modifications in the Business logic.
+In other words, we can say that it is the responsibility of view to maintain consistency in its presentation and the model changes.
+Controller:
+Whenever the user sends a request for something, it always goes through Controller.
+A controller is responsible for intercepting the request from view and passes to the model for appropriate action.
+After the action has been taken on the data, the controller is responsible for directly passes the appropriate view to the user.
+In graphical user interfaces, controller and view work very closely together.
+
+
+.htaccess
+https://www.digitalocean.com/community/tutorials/how-to-use-the-htaccess-file
+https://www.learnvern.com/advanced-php-programming-tutorial/introduction-to-php-mvc-architecture
+https://www.webhostingsecretrevealed.net/blog/web-hosting-guides/the-basics-of-htaccess/ 	
+https://phpflow.com/php/simple-mvc-architecture-example-in-php/
+
+https://www.c-sharpcorner.com/article/mysql-php-mvc-crud-without-framework/
+
+MVC:
+https://www.studentstutorial.com/php/mvc/intro
+
+Create controller class which will be called from index.php:
+https://www.developerhelps.com/php-mvc-framework/
+https://www.taniarascia.com/the-simplest-php-router/
+
+Login page:
+https://www.developerhelps.com/login-page-in-php/
+
+
+Task Report | 20 Mar, 2023
+
+1. MVC Architecture.
+2. Use of .htaccess.
+3. Managing Routes.
+4. Custom MVC Intro.
+5. Version Control Tool(GIT).
+   
+  
+*About GIT* 
+Features
+
+Provides strong support for non-linear development.
+Distributed repository model.
+Compatible with existing systems and protocols like HTTP, FTP, ssh.
+Capable of efficiently handling small to large sized projects.
+Cryptographic authentication of history.
+Pluggable merge strategies.
+Toolkit-based design.
+Periodic explicit object packing.
+Garbage accumulates until collected.
+Pros
+
+Super-fast and efficient performance.
+Cross-platform
+Code changes can be very easily and clearly tracked.
+Easily maintainable and robust.
+Offers an amazing command line utility known as git bash.
+Also offers GIT GUI where you can very quickly re-scan, state change, sign off, commit & push the code quickly with just a few clicks.
+
+
+
+*MVC Folder Structure*
+Project/Name
+├── app
+│   ├── config
+│   │   ├── config.php
+│   ├── controllers
+│   │   ├── api
+│   │   │   ├── Pages.php
+│   │   │   ├── Posts.php
+│   │   │   ├── Users.php
+│   │   ├── Pages.php
+│   │   ├── Posts.php
+│   │   ├── Users.php
+│   ├── helpers
+│   │   ├── session_helper.php
+│   │   ├── url_helper.php
+│   ├── libraries
+│   │   ├── ApiController.php
+│   │   ├── Controller.php
+│   │   ├── Core.php
+│   │   ├── Database.php
+│   ├── models
+│   │   ├── Post.php
+│   │   ├── User.php
+│   ├── views
+│   │   ├── inc
+│   │   │   ├── footer.php
+│   │   │   ├── header.php
+│   │   │   ├── navbar.php
+│   │   ├── pages
+│   │   │   ├── about.php
+│   │   │   ├── index.php
+│   │   ├── posts
+│   │   │   ├── add.php
+│   │   │   ├── edit.php
+│   │   │   ├── index.php
+│   │   │   ├── show.php
+│   │   ├── users
+│   │   │   ├── login.php
+│   │   │   ├── register.php
+│   ├── .htaccess
+│   ├── bootstrap.php
+├── public
+│   ├── css
+│   │   ├── bootstrap.css
+│   │   ├── style.css
+│   ├── js
+│   │   ├── bootstrap.js
+│   │   ├── jquery.js
+│   ├── .htaccess
+│   ├── index.php
+├── .htaccess
+
+
+Task Report | 21 Mar, 2023
+
+1. Design Pattern.
+2. Singleton design pattern concept.
+3. About factory design pattern.  
+4. Strategy pattern.
+5. Git Repository.
+
+User Registration:
+https://codewithawa.com/posts/complete-user-registration-system-using-php-and-mysql-database
+https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
+
+CRUD:
+https://www.tutorialrepublic.com/php-tutorial/php-mysql-crud-application.php#
+
+Ajax Pagination:
+https://phppot.com/menu/php/php-ajax/
+
+
+Task Report | 22 Mar, 2023
+
+1. Custom MVC - Created controller class which will be called from index.php.
+2. Sample Blog Application.
+	-Database.
+	-Index.
+	-Login Page.
+	-Registration Page.
+
+Ajax tutorial:
+https://www.tutsmake.com/datatables-crud-with-ajax-php-mysql/
+https://www.bitdegree.org/learn/php-ajax-example *
+https://webdamn.com/datatables-add-edit-delete-with-ajax-php-mysql/
+
+Learn: https://www.bitdegree.org/courses/user/course/coding-for-beginners-space-doggos/151546
+
+	
+Task Report | 23 Mar, 2023
+
+1. Ajax Based Paging search & sort with database.
+	-Employee database.
+	-index page.
+	-response page.
+2. Sample Blog application.
+	-About page.
+	-home page.
+	-contact page.
+	-logout page.
+
+Sql injection: https://www.geeksforgeeks.org/how-to-prevent-sql-injection-in-php/
+	
+Task Report | 24 Mar, 2023
+
+-Blog management should be secure only to authenticated users.
+-Page title for all blog-detail page should be the blog title.
+-Blog Form Creation.
+	|- fields- Title,description,image,createdby,create Date.
+	|- Add ,Update, Delete Post.
+	
+Task Report | 27 Mar, 2023
+
+-Blog Management -Blog Item listing.
+-Request filtering -sql injection.
+-How to use Request filtering.
+-Request Blocking.
+-Mitigation of sql Injection.
+
+
+LARAVEL:
+
+Composer-
+Composer is a tool which includes all the dependencies and libraries. 
+It allows a user to create a project with respect to the mentioned framework (for example, 
+those used in Laravel installation). Third party libraries can be installed easily with help of composer.
+
+All the dependencies are noted in composer.json file which is placed in the source folder.
+
+Artisan-
+Command line interface used in Laravel is called Artisan. It includes a set of commands which assists in building a web application.
+ These commands are incorporated from Symphony framework, resulting in add-on features in Laravel 5.1 (latest version of Laravel).
+
+Features of Laravel-
+Laravel offers the following key features which makes it an ideal choice for designing web applications −
+
+Modularity-
+Laravel provides 20 built in libraries and modules which helps in enhancement of the application.
+Every module is integrated with Composer dependency manager which eases updates.
+
+Testability-
+Laravel includes features and helpers which helps in testing through various test cases. 
+This feature helps in maintaining the code as per the requirements.
+
+Routing-
+Laravel provides a flexible approach to the user to define routes in the web application.
+Routing helps to scale the application in a better way and increases its performance.
+
+Configuration Management-
+A web application designed in Laravel will be running on different environments, 
+which means that there will be a constant change in its configuration. 
+Laravel provides a consistent approach to handle the configuration in an efficient way.
+
+Query Builder and ORM-
+Laravel incorporates a query builder which helps in querying databases using various simple chain methods. 
+It provides ORM (Object Relational Mapper) and ActiveRecord implementation called Eloquent.
+
+Schema Builder-
+Schema Builder maintains the database definitions and schema in PHP code. 
+It also maintains a track of changes with respect to database migrations.
+
+Template Engine-
+Laravel uses the Blade Template engine, 
+a lightweight template language used to design hierarchical blocks and layouts with predefined blocks that include dynamic content.
+
+E-mail-
+Laravel includes a mail class which helps in sending mail with rich content and attachments from the web application.
+
+Authentication-
+User authentication is a common feature in web applications. 
+Laravel eases designing authentication as it includes features such as register, forgot password and send password reminders.
+
+Redis-
+Laravel uses Redis to connect to an existing session and general-purpose cache. Redis interacts with session directly.
+
+Queues-
+Laravel includes queue services like emailing large number of users or a specified Cron job. 
+These queues help in completing tasks in an easier manner without waiting for the previous task to be completed.
+
+Event and Command Bus-
+Laravel 5.1 includes Command Bus which helps in executing commands and dispatch events in a simple way. 
+The commands in Laravel act as per the application’s lifecycle.
+
+
+Task Report | 28 Mar, 2023
+
+1. Composer intro,installation.
+2. Laravel intro,installation.
+3. Directory Structure.
+4. Laravel Configuration.
+5. Laravel Routing.
+6. Laravel Namespace.
+
+
+Directory Structure:
+Introduction
+|--The Root Directory
+	|--The app Directory
+	|--The bootstrap Directory
+	|--The config Directory
+	|--The database Directory
+	|--The public Directory
+	|--The resources Directory
+	|--The routes Directory
+	|--The storage Directory
+	|--The tests Directory
+	|--The vendor Directory
+|--The App Directory
+	|--The Broadcasting Directory
+	|--The Console Directory
+	|--The Events Directory
+	|--The Exceptions Directory
+	|--The Http Directory
+	|--The Jobs Directory
+	|--The Listeners Directory
+	|--The Mail Directory
+	|--The Models Directory
+	|--The Notifications Directory
+	|--The Policies Directory
+	|--The Providers Directory
+	|--The Rules Directory
+
+Git Command :https://www.javatpoint.com/git-commands#:~:text=12%20Git%20Commands%201%201%29%20Git%20config%20command,8%208%29%20Git%20pull%20command%20...%20More%20items
+			 https://www.educba.com/git-commands/
+			 https://www.freecodecamp.org/news/git-cheat-sheet/
+Add project to repository: https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github
+						  https://gist.github.com/alexpchin/102854243cd066f8b88e
+						
+Login Reg. system : https://github.com/romeopeter/PHP-MYSQL-LOGIN-SYSTEM 
+User management system : https://github.com/codeceil/Simple-User-Management-System-with-PHP-MySQL
+					
+					
+Available commands:
+  clear-compiled       Remove the compiled class file
+  down                 Put the application into maintenance mode
+  env                  Display the current framework environment
+  help                 Displays help for a command
+  inspire              Display an inspiring quote
+  list                 Lists commands
+  migrate              Run the database migrations
+  optimize             Optimize the framework for better performance (deprecated)
+  preset               Swap the front-end scaffolding for the application
+  serve                Serve the application on the PHP development server
+  tinker               Interact with your application
+  up                   Bring the application out of maintenance mode
+ app
+  app:name             Set the application namespace
+ auth
+  auth:clear-resets    Flush expired password reset tokens
+ cache
+  cache:clear          Flush the application cache
+  cache:forget         Remove an item from the cache
+  cache:table          Create a migration for the cache database table
+ config
+  config:cache         Create a cache file for faster configuration loading
+  config:clear         Remove the configuration cache file
+ db
+  db:seed              Seed the database with records
+ event
+  event:generate       Generate the missing events and listeners based on registration
+ key
+  key:generate         Set the application key
+ make
+  make:auth            Scaffold basic login and registration views and routes
+  make:command         Create a new Artisan command
+  make:controller      Create a new controller class
+  make:event           Create a new event class
+  make:exception       Create a new custom exception class
+  make:factory         Create a new model factory
+  make:job             Create a new job class
+  make:listener        Create a new event listener class
+  make:mail            Create a new email class
+  make:middleware      Create a new middleware class
+  make:migration       Create a new migration file
+  make:model           Create a new Eloquent model class
+  make:notification    Create a new notification class
+  make:policy          Create a new policy class
+  make:provider        Create a new service provider class
+  make:request         Create a new form request class
+  make:resource        Create a new resource
+  make:rule            Create a new validation rule
+  make:seeder          Create a new seeder class
+  make:test            Create a new test class
+ migrate
+  migrate:fresh        Drop all tables and re-run all migrations
+  migrate:install      Create the migration repository
+  migrate:refresh      Reset and re-run all migrations
+  migrate:reset        Rollback all database migrations
+  migrate:rollback     Rollback the last database migration
+  migrate:status       Show the status of each migration
+ notifications
+  notifications:table  Create a migration for the notifications table
+ package
+  package:discover     Rebuild the cached package manifest
+ queue
+  queue:failed         List all of the failed queue jobs
+  queue:failed-table   Create a migration for the failed queue jobs database table
+  queue:flush          Flush all of the failed queue jobs
+  queue:forget         Delete a failed queue job
+  queue:listen         Listen to a given queue
+  queue:restart        Restart queue worker daemons after their current job
+  queue:retry          Retry a failed queue job
+  queue:table          Create a migration for the queue jobs database table
+  queue:work           Start processing jobs on the queue as a daemon
+ route
+  route:cache          Create a route cache file for faster route registration
+  route:clear          Remove the route cache file
+  route:list           List all registered routes
+ schedule
+  schedule:run         Run the scheduled commands
+ session
+  session:table        Create a migration for the session database table
+ storage
+  storage:link         Create a symbolic link from "public/storage" to "storage/app/public"
+ vendor
+  vendor:publish       Publish any publishable assets from vendor packages
+ view
+  view:clear           Clear all compiled view files			 
+			 
+Task Report | 29 Mar, 2023	
+
+1. Request lifecycle.
+2. Laravel Middleware.
+3. Laravel Controller.
+	-Constructor injection.
+	-Method injection.
+4. Request.
+5. Responses.
+6. Cookie.
+7. View.
+
+The $loop variable also contains a variety of other useful properties:
+
+Property	   Description
+$loop->index	The index of the current loop iteration (starts at 0).
+$loop->iteration	The current loop iteration (starts at 1).
+$loop->remaining	The iterations remaining in the loop.
+$loop->count	The total number of items in the array being iterated.
+$loop->firstWhether this is the first iteration through the loop.
+$loop->last	   Whether this is the last iteration through the loop.
+$loop->even	   Whether this is an even iteration through the loop.
+$loop->odd	   Whether this is an odd iteration through the loop.
+$loop->depth	The nesting level of the current loop.
+$loop->parent	When in a nested loop, the parent's loop variable.
+
+Session / configuration:
+file - sessions are stored in storage/framework/sessions.
+cookie - sessions are stored in secure, encrypted cookies.
+database - sessions are stored in a relational database.
+memcached / redis - sessions are stored in one of these fast, cache based stores.
+dynamodb - sessions are stored in AWS DynamoDB.
+array - sessions are stored in a PHP array and will not be persisted.
+
+Available Validation Rules in Laravel
+
+Accepted	   Active URL	  After (Date)
+Alpha	   Alpha Dash	  Alpha Numeric
+Array	  Before (Date)  	Between
+Boolean	  Confirmed	     Date
+Date Format	  Different	 Digits
+Digits Between	  E-Mail	 Exists (Database)
+Image (File)	In	 Integer
+IP Address	 JSON	 Max
+MIME Types(File)	Min  	Not In
+Numeric	  Regular Expression	Required
+Required If	  Required Unless	 Required With
+Required With All	Required Without	Required Without All
+Same	Size	String
+Timezone	Unique (Database)	URL
+
+
+
+Task Report | 30 Mar, 2023
+
+1. Blade Templates.
+2. Redirections.
+3. Session.
+4. CSRF Protection.
+5. File Uploading.
+6. Validation.
+7. Error Handling.
+8. Authentication.
+9. Query Builder.
+
+Task Report | 31 Mar, 2023-1:30
+
+1. Eloquent ORM.
+2. Relationship. 
+3. Service Provider.
+
+Laravel Pagination Methods: https://laravel.com/docs/10.x/pagination
+
+How to create Facade in Laravel−
+
+Step 1 − Create PHP Class File.
+
+Step 2 − Bind that class to Service Provider.
+
+Step 3 − Register that ServiceProvider to
+		Config\app.php as providers.
+
+Step 4 − Create Class which is this class extends to
+		lluminate\Support\Facades\Facade.
+
+Step 5 − Register point 4 to Config\app.php as aliases.
+
+Laravel CRUD Tutorial: https://www.parthpatel.net/laravel-ajax-crud-bootstrap-jquery/
+					https://github.com/Amilcar-Paco/laravel_crud
+		CRUD Blog: https://www.parthpatel.net/laravel-8-crud-blog-tutorial/
+
+
+Task Report | 3 Apr, 2023
+
+1. Pagination.
+2. Migrations.
+3. Seeding.
+4. Accessor/Mutators.
+5. Facades.
+6. Events.
+7. Collections.
+
+Task Report | 4 Apr, 2023
+
+-Authorization
+	-Gates
+	-Policies
+-Service container
+	-Binding
+-Study amazon.in and prepare the features list and
+ also the database structure for the catalog and orders process
+
+Amazon key features: https://www.makeuseof.com/tag/hidden-amazon-features/
+
+Ecommerce php mvc -https://github.com/ibrahimelgadid/Ecommerce-by-mvc-php/tree/master/app
+				   https://github.com/mohsinenur/E-Commerce-Website-Using-PHP
+		  https://www.campcodes.com/tutorials/php-tutorials/oop-crud-operation-using-ajax-jquery-in-php/
+		  https://www.c-sharpcorner.com/article/mysql-php-mvc-crud-without-framework/
+Laravel practice: https://github.com/alexeymezenin/laravel-best-practices
+			- https://www.studentstutorial.com/laravel/laravel-tutorial
+ 
+Task Report | 5 Apr, 2023
+
+- PHP MVC Revision.
+
+
+Movie ticket booking website using PHP MVC OOP jQuery and MySQL
+
+Frontend
+- registration and login page
+- on the home screen show the list of movies.
+- when click on movie show the movie details(name, description, time, release date, movie rating), 
+- add one button[book ticket] for movie booking
+	- when user click on the button show the screen and seats and user can select the seats and show the selected number(A-H & 1-10 like A1,A2....H9,H10)
+	- Calculate the price based on seat selection.
+	- user cannot select the already selected seats(Disable)
+	- after confirm the booking sent the booking details on user email id
+	- then after display booking details on booking section
+
+
+Admin : 
+	- login page (static credential)
+	- on dashboard (total active movies,total inactive movies, total booking, total earning,total users)
+	- add,edit,delete movies (name,image,description,price,release date) if you like to add new fields then you can
+	- display total booking seats in particular movies show 
+	- update,view user details
+	- user booking details (user name, movie name, total ticket,price , movie show time and date)
+
+
+
+Task Report | 6 Apr, 2023
+
+-Movie ticket booking
+	-Database
+	-Admin-Login page
+		  -Home Page
+		  -Insert 
+		  
+Task Report | 7 Apr, 2023
+
+-Movie ticket booking -Admin
+	-movie listing-add,update,delete
+	-theater & Seat-add,update,delete
+	-logout
+	
+Task Report | 10 Apr, 2023
+
+-User side-Home page
+		  -Movie list Page
+		  -Movie Description
+		  -Movie booking page
+-Admin side booking info		
+
+Task Report | 12 Apr, 2023
+
+-Movie ticket booking
+	-Manage Movies,movielist
+	-Manage Seats
+	-Manage Theater
+	-Show available seat
+
+Task Report | 13 Apr, 2023
+
+-Laravel revision with example. 
+	-routing
+	-middleware
+	-controllers
+	-request
+	-cookie
+	-response
+	-view
+	-Redirections
+	-session
+	-validation
+	
+Laravel mvc best practice : https://climbtheladder.com/10-laravel-architecture-best-practices/ 	
+	
+Laravel custom auth login and registration:
+https://codeanddeploy.com/blog/laravel/laravel-8-authentication-login-and-registration-with-username-or-email#ixCwUUTI0HRDSNTb0sFe8hrhu
+https://www.itsolutionstuff.com/post/laravel-custom-login-and-registration-exampleexample.html
+https://www.tutsmake.com/laravel-custom-authentication-login-and-registration/
+
+Laravel ToDo(ajax): https://www.positronx.io/laravel-ajax-example-tutorial/ 
+Ajax example : https://codeanddeploy.com/blog/laravel/laravel-8-ajax-example-step-by-step-tutorial
+Ajax request example :https://www.nicesnippets.com/blog/laravel-8-ajax-request-example
+
+git repo token - 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
+	
+	
+Task Report | 14 Apr, 2023
+
+-Laravel
+	-File upload
+	-event handling
+	-Facades
+	-Authentication
+	-Authorization
+	-CSRF protection
+	-Artisan console
+	
+Task Report | 17 Apr, 2023	
+
+-Laravel
+	-Blade template
+	-Error handling
+	-Query builder
+	-forms
+	-Eloquent ORM
+		-Relationship
+		-Collection
+		-Mutators/casts
+
+Task Report | 18 Apr, 2023
+
+-laravel
+	-facades
+	-migration
+	-ajax 
+	-gate
+	-policy
+	-service provider
+
+Task Report | 19 Apr, 2023
+
+-Laravel
+	-Create index page
+	-login page
+	-registration page 
+	-logout

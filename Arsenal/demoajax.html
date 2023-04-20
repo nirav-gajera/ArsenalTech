@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function showhint(str) {
+            if (str.length == 0){
+                document.getElementById("txthint").innerHTML = "";
+                return;
+            } else {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("txthint").innerHTML = this.responseText;
+                    }
+                };
+                xmlhttp.open("GET", "hint.php?q=" + str, true);
+                xmlhttp.send();
+            }
+        }
+    </script>
+</head>
+<body>
+    <p><b>Start typing name in input field below:</b></p>
+    <form action="">
+        <label for="fname"> Name: </label>
+        <input id="fname" type="text" name="fname" onkeyup="showhint(this.value);">
+    </form>
+    <p>Suggestion: <span id = "txthint"></span></p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <h2>Javascript array sort</h2>
+    <p>Click button to sort the array alphabetically or numerically</p>
+    <button onclick="myfunction1()"> Sort alphabetically</button>
+    <button onclick="myfunction2()">Sort numerically</button>
+    <p id="demo"></p>
+    <script>
+        const points = [40,100,5,1,25,10,9,86];
+        document.getElementById("demo").innerHTML= points;
+        function myfunction1() {
+            points.sort();
+            document.getElementById("demo").innerHTML= points;
+        }
+        function myfunction2() {
+            points.sort(function(a,b){return a-b;});
+            document.getElementById("demo").innerHTML= points;
+            }
+    </script>
+</body>
+</html>
