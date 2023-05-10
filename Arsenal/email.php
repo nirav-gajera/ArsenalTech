@@ -1,9 +1,9 @@
 <html>
-<head>
-<style>
-.error{color: red;}
-</style>
-</head>
+	<head>
+		<style>
+			.error{color: red;}
+		</style>
+	</head>
 <body>
 
 <?php
@@ -44,20 +44,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 ?>
 
 <h1>Validation</h1>
-<p><span class="error">* required field</span></p>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-<b>Enter Name:</b><input type="text" name="name">
-<span class="error">* <?php echo $nameErr;?></span><br>
-<b>Enter Email:</b><input type="text" name="email">
-<span class="error">* <?php echo $emailErr;?></span><br>
-<input type="submit" name="submit">
-</form>
+	<p><span class="error">* required field</span></p>
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		<b>Enter Name:</b><input type="text" name="name">
+			<span class="error">* <?php echo $nameErr;?></span><br>
+		<b>Enter Email:</b><input type="text" name="email">
+			<span class="error">* <?php echo $emailErr;?></span><br>
+		<input type="submit" name="submit">
+	</form>
 
 <?php
-echo "<h2>Your Input:</h2>";
-echo $name;
-echo "<br>";
-echo $email;
+	echo "<h2>Your Input:</h2>";
+	echo $name;
+	echo "<br>";
+	echo $email;
 ?>
 </body>
 </html>
